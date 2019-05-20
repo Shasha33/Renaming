@@ -1,24 +1,34 @@
 package com.task.rename;
 
 import org.apache.commons.io.*;
+import org.jetbrains.annotations.*;
 
 import java.io.*;
 import java.util.*;
 
+/**
+ * Class consists of a single static method that renames files in a directory.
+ */
 public class Renaming {
     
     private static final List<String> extensions = List.of("java", "kt");
 
-    private static String newName(File file) {
+    private static String newName(@NotNull File file) {
         return file.getPath() + ".2019";
     }
 
-    private static boolean correctExtension(String name) {
+    private static boolean correctExtension(@NotNull String name) {
         var extension = FilenameUtils.getExtension(name);
         return extensions.contains(extension);
     }
 
-    public static List<File> rename(File directory) {
+    /**
+     * Recursevly renames files in given directory with extentions java or kt
+     * to filename.java.2019 or filename.kt.2019 respectively.
+     * If given argument isnt a directory does nothing.
+     * @return list of renamed files
+     */
+    public static List<File> rename(@NotNull File directory) {
         if (!directory.isDirectory()) {
             return new ArrayList<>();
         }
