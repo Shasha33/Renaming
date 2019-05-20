@@ -23,7 +23,7 @@ public class Renaming {
     }
 
     /**
-     * Recursevly renames files in given directory with extentions java or kt
+     * Recursively renames files in given directory with extensions java or kt
      * to filename.java.2019 or filename.kt.2019 respectively.
      * If given argument isnt a directory does nothing.
      * @return list of renamed files
