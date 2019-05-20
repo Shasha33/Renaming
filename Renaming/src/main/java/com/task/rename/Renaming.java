@@ -1,18 +1,18 @@
 package com.task.rename;
 
-import com.google.common.io.*;
+import org.apache.commons.io.*;
 
 import java.io.*;
 import java.util.*;
 
 public class Renaming {
 
-    static boolean correctExt(String name) {
-        var extention = Files.getFileExtension(name);
+    private static boolean correctExt(String name) {
+        var extention = FilenameUtils.getExtension(name);
         return "java".equals(extention) || "kt".equals(extention);
     }
 
-    static List<File> rename(File directory) {
+    public static List<File> rename(File directory) {
         if (!directory.isDirectory()) {
             return new ArrayList<>();
         }

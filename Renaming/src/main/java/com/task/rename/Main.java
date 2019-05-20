@@ -1,8 +1,6 @@
 package com.task.rename;
 
 import java.io.*;
-import java.lang.reflect.*;
-import java.util.*;
 
 public class Main {
     public static void main(String... args) {
